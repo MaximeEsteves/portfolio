@@ -12,7 +12,12 @@ export default function Annexe({ visible }) {
       <div className="annexe-grid">
         {annexeData.slice(0, 6).map((item) => (
           <Link key={item.id} to={`/projet/${item.id}`} className="Card">
-            <Card picture={item.cover} width="355px" height="220px" />
+            <Card
+              picture={item.cover}
+              title={item.title}
+              width="355px"
+              height="220px"
+            />
           </Link>
         ))}
       </div>

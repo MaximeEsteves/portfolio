@@ -170,13 +170,23 @@ export default function Projet({ showAll, setShowAll }) {
                   />
                 </div>
                 <Link to={`/projet/${profil.id}`}>
-                  <Card picture={profil.cover} width="475px" height="258px" />
+                  <Card
+                    picture={profil.cover}
+                    title={profil.title}
+                    width="475px"
+                    height="258px"
+                  />
                 </Link>
               </>
             ) : (
               <>
                 <Link to={`/projet/${profil.id}`}>
-                  <Card picture={profil.cover} width="475px" height="258px" />
+                  <Card
+                    picture={profil.cover}
+                    title={profil.title}
+                    width="475px"
+                    height="258px"
+                  />
                 </Link>
                 <div className="Description">
                   <Description

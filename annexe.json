@@ -31,7 +31,7 @@
     "description": "Développez le back-end d'un site de notation de livres.",
     "descriptionBis": "Création du back-end d’un site de notation de livres avec Express et MongoDB via Mongoose. \nMise en place d’une architecture MVC, développement des modèles de données et implémentation des opérations CRUD. Intégration d’un système d’authentification sécurisé, gestion et optimisation des images, calcul des notes moyennes et respect des bonnes pratiques du Green Code pour réduire l’empreinte écologique.",
     "specifications": "NodeJS, Express, APIRest, MongoDB, Mongoose",
-    "cover": "/annexe/mon-vieux-grimoire/image-projet-mon-vieux-grimoire.webp",
+    "cover": "/annexe/mon-vieux-grimoire/image-projet-mon-vieux-grimoire-1.webp",
     "pictures": [
       "/annexe/mon-vieux-grimoire/image-mon-vieux-grimoire-1.webp",
       "/annexe/mon-vieux-grimoire/image-mon-vieux-grimoire-6.webp",
