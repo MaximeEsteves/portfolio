@@ -169,7 +169,7 @@ export default function Projet({ showAll, setShowAll }) {
                     specifications={profil.specifications}
                   />
                 </div>
-                <Link to={`/projet/${profil.id}`}>
+                <Link target="_blank" to={profil.link}>
                   <Card
                     picture={profil.cover}
                     title={profil.title}
@@ -180,7 +180,7 @@ export default function Projet({ showAll, setShowAll }) {
               </>
             ) : (
               <>
-                <Link to={`/projet/${profil.id}`}>
+                <Link target="_blank" to={profil.link}>
                   <Card
                     picture={profil.cover}
                     title={profil.title}

@@ -141,9 +141,28 @@
       "picture": "/marineesteves/logo-maroue.webp"
     },
     "rating": "Visiter le site",
-    "link": "marineesteves.go.yn.fr",
+    "link": "https://marineesteves.go.yn.fr",
     "location": "Site web",
     "equipments": ["HTML5", "CSS3", "FileZila"],
     "tags": ["Portfolio", "Artiste", "Création"]
+  },
+  {
+    "id": "c6qdl8a5",
+    "titleCard": "Application web Star Wars",
+    "title": "Application web Star Wars",
+    "description": "Création d'une application web de recherche sur l'univers Star Wars.",
+    "descriptionBis": "Star Search est une application web permettant de rechercher parmi les personnages et planètes de l'univers Star Wars via l'API SWAPI.",
+    "specifications": "React, TailwindCSS, SWAPI, Lucide.",
+    "cover": "/starsearch/image-starsearch.png",
+    "pictures": [],
+    "host": {
+      "name": "Site Star Search",
+      "picture": "/starsearch/icone.svg"
+    },
+    "rating": "Visiter le site",
+    "link": "https://star-search-psi.vercel.app/",
+    "location": "Site web",
+    "equipments": ["React", "TailwindCSS", "SWAPI", "Lucide"],
+    "tags": ["Starwars", "Recherche", "API"]
   }
 ]
