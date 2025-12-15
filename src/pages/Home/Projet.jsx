@@ -148,7 +148,7 @@ export default function Projet({ showAll, setShowAll }) {
     <div className="card-home" ref={containerRef} id="projet">
       {/* La boule floue */}
       <div className="red-ball" ref={redBallRef} />
-      <h2>Mes projets</h2>
+      <h2>Mes réalisations</h2>
       {projetsToShow.map((profil, index) => {
         const isExtra = showAll && index === 3;
         const isLastVisible = !showAll && index === 2;

@@ -24,13 +24,13 @@ export default function Home() {
   return (
     <div className="home-container">
       <Text
-        title="Développeur web"
-        description="👋 Bonjour, je suis <strong>Maxime Esteves</strong>, en reconversion professionnelle, titulaire d'un diplome Développer Web, je recherche une entreprise pour commencer ma nouvelle vie professionnelle en CDD/CDI ou alternance. <br /> <br /> Je suis curieux et envieux d'apprentissage ! Découvrez mon parcours et mes différents projets ☺️"
+        title="Développeur front-end"
+        description="👋 Bonjour, je suis <strong>Maxime Esteves</strong>, en reconversion professionnelle, titulaire d'un diplome Développeur Web, je recherche une entreprise pour commencer ma nouvelle vie professionnelle en CDD/CDI ou alternance. <br /> <br /> Je suis curieux et envieux d'apprentissage ! Découvrez mon parcours et mes différents projets ☺️"
       />
       <Projet showAll={showAll} setShowAll={setShowAll} />
       <Text
         title="Mes skills"
-        description="💪 Titulaire d’un titre professionnel de Développeur Web, je bénéficie également de six années d’expérience dans la logistique au sein d’un commerce de gros, ainsi que d'une expérience en vente et bureau d’études en électricité. <br> Ce parcours m’a permis de développer des compétences transversales solides, reflétant ma persévérance, mon adaptabilité et mon engagement dans chaque projet entrepris. <br> <br> Je suis autodidacte, curieux et envieux d'apprentissage ! Découvre mes skills ☺️"
+        description="💪 Titulaire d’un titre professionnel de Développeur Web, je bénéficie également de sept années d’expérience dans la logistique au sein d’un commerce de gros, ainsi que d'une expérience en vente et bureau d’études en électricité. <br> Ce parcours m’a permis de développer des compétences transversales solides, reflétant ma persévérance, mon adaptabilité et mon engagement dans chaque projet entrepris. <br> <br> Je suis autodidacte, curieux et envieux d'apprentissage ! Découvre mes skills ☺️"
       />
       <Skills />
       <div className="contact-wrapper" id="contact">

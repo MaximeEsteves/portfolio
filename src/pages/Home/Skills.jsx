@@ -32,7 +32,7 @@ function Skills() {
           <div className="test">
             <FontAwesomeIcon icon={faGraduationCap} />
             <p>
-              BAC Pro Électrotechnique 2013 - 2015
+              BAC Pro Électrotechnique 2012 - 2015
               <span className="sous-text">Mention assez bien. (81)</span>
             </p>
           </div>
