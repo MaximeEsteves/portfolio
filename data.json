@@ -1,5 +1,31 @@
 [
   {
+    "id": "c67abyu9",
+    "titleCard": "Planiprof",
+    "title": "Planiprof",
+    "description": "Création d’une application web conçue pour aider les enseignants à établir des plans de classes et bien plus encore.",
+    "note": "Site en cours de création ...",
+    "descriptionBis": "Application conçue pour aider les enseignants à établir un plan de classes, gérer leurs listes d'élèves et bien plus encore avec les différents outils disponible.",
+    "specifications": "React vite, Javascript, TailwindCSS, Supabase, Netlify.",
+    "cover": "/planiprof/image-planiprof.png",
+    "pictures": ["/planiprof/image-planiprof.png"],
+    "host": {
+      "picture": "/planiprof/image-planiprof.png"
+    },
+    "rating": "Visiter le site",
+    "link": "https://planiprof.netlify.app",
+    "location": "Application web",
+    "equipments": [
+      "React",
+      "vite",
+      "JavaScript",
+      "TailwindCSS",
+      "Supabase",
+      "Netlify"
+    ],
+    "tags": ["Application", "Enseignement", "Fonctionnalité"]
+  },
+  {
     "id": "c67ab8a1",
     "titleCard": "Les Mignonneries de Nathalie",
     "title": "Les Mignonneries de Nathalie",
@@ -49,7 +75,7 @@
     "id": "c67ab8a2",
     "titleCard": "Le bon entraineur",
     "title": "Le bon entraineur",
-    "description": "Création d’un site web pour l’entrainement sur des combats tactiques du jeu Dofus.",
+    "description": "Création d’un site application web pour l’entrainement sur des combats tactiques du jeu Dofus.",
     "descriptionBis": "Le Bon Entraîneur est une plateforme gratuite et interactive dédiée aux joueurs de Dofus souhaitant perfectionner leurs compétences en combat tactique. \n\nPensé pour les débutants comme pour les vétérans, le site propose des entraînements sans limite de temps, des conseils clairs et des guides stratégiques pour comprendre et maîtriser chaque mécanique de combat.\n Avec une approche ludique et pédagogique, Le Bon Entraîneur permet à chacun de progresser à son rythme, de tester des stratégies, et de s’améliorer sans pression.",
     "specifications": "HTML, CSS, JavaScript, PHP, MySQL, InfinityFree, FileZila.",
     "cover": "/lebonentraineur/image-lebonentraineur-2.webp",

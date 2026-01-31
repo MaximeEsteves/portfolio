@@ -2,14 +2,14 @@
   position: relative;
   border-radius: 10px;
   overflow: hidden;
+  width: 100%;
   transition: transform 0.2s ease-in-out;
   &:hover {
     transform: scale(1.01);
   }
 }
 .card-image {
-  width: 100%; // prend toute la largeur du parent
-  height: 100%;
+  width: 100%;
   object-fit: cover;
   border-radius: 10px;
 }

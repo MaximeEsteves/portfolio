@@ -57,32 +57,24 @@ export default function Projet({ showAll, setShowAll }) {
                   <Description
                     title={profil.title}
                     description={profil.description}
+                    note={profil.note}
                     specifications={profil.specifications}
                   />
                 </div>
                 <Link target="_blank" to={profil.link}>
-                  <Card
-                    picture={profil.cover}
-                    title={profil.title}
-                    width="475px"
-                    height="258px"
-                  />
+                  <Card picture={profil.cover} title={profil.title} />
                 </Link>
               </>
             ) : (
               <>
                 <Link target="_blank" to={profil.link}>
-                  <Card
-                    picture={profil.cover}
-                    title={profil.title}
-                    width="475px"
-                    height="258px"
-                  />
+                  <Card picture={profil.cover} title={profil.title} />
                 </Link>
                 <div className="Description">
                   <Description
                     title={profil.title}
                     description={profil.description}
+                    note={profil.note}
                     specifications={profil.specifications}
                   />
                 </div>
