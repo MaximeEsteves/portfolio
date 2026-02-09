@@ -1,48 +1,16 @@
-/* src/components/Annexe/Annexe.scss */
-.annexe {
-  margin: 0;
-  z-index: 1;
-  h3 {
-    font-size: 28px;
-    margin-bottom: 80px;
-    text-align: center;
-  }
+﻿.annexe-section {
+  margin-top: var(--space-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
 }
 
-.annexe-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 62px 0px;
-  margin: auto;
-  justify-content: center;
-  img {
-    border-radius: 10px;
-    height: 100%;
-    width: 100%;
-    object-fit: cover !important;
-    opacity: 0.9 !important;
-  }
+.annexe-carousel {
+  grid-auto-columns: minmax(360px, 32vw);
 }
-@media (max-width: 1640px) {
-  .card-home {
-    width: 85%;
-  }
-}
-@media (max-width: 1313px) {
-  .annexe-grid {
-    display: flex;
-    margin: auto;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-  }
-}
-@media (max-width: 975px) {
-  .annexe {
-    width: 100%;
-  }
-  .annexe-grid {
+
+@media (max-width: 900px) {
+  .annexe-carousel {
+    grid-auto-columns: minmax(220px, 70vw);
   }
 }

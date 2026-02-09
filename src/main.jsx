@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 import ScrollToTop from "./ScrollToTop";
+import ScrollBackToTop from "./ScrollBackToTop";
 import "./styles/Main.scss";
 
 import Header from "./pages/Home/Header";
@@ -21,6 +22,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
+      <ScrollBackToTop />
     </Router>
   </StrictMode>,
 );

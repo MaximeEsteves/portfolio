@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect, useRef, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import "./Slideshow.scss";
 import data from "./../../../data.json";
-import annexeData from "./../../../annexe.json"; // <-- ajout
+import annexeData from "./../../../annexe.json";
 import {
   faChevronLeft,
   faChevronRight,
@@ -12,40 +12,74 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Slideshow({ projectId }) {
   const { id } = useParams();
-  // Fusion des deux sources de données
   const allProjects = [...data, ...annexeData];
   const logement = allProjects.find((item) => item.id === id);
 
   const [index, setIndex] = useState(0);
-  const [isOpen, setIsOpen] = useState(false); // modale ouverte ou non
-  const [currentImg, setCurrentImg] = useState(null); // image affichée dans la modale
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentImg, setCurrentImg] = useState(null);
+  const closeButtonRef = useRef(null);
+  const previousFocusRef = useRef(null);
 
-  if (!logement || !logement.pictures || logement.pictures.length === 0) {
-    return null; // Si aucun logement trouvé ou pas d'image
-  }
-  // Remet à zéro quand le projet change
+  const pictures = logement?.pictures ?? [];
+  const total = pictures.length;
+
   useEffect(() => {
     setIndex(0);
   }, [projectId]);
-  const total = logement.pictures.length;
 
-  const goToPrevious = () => {
+  const goToPrevious = useCallback(() => {
+    if (total <= 1) return;
     setIndex((prevIndex) => (prevIndex === 0 ? total - 1 : prevIndex - 1));
-  };
+  }, [total]);
 
-  const goToNext = () => {
+  const goToNext = useCallback(() => {
+    if (total <= 1) return;
     setIndex((prevIndex) => (prevIndex === total - 1 ? 0 : prevIndex + 1));
-  };
+  }, [total]);
 
   const openModal = (src) => {
+    previousFocusRef.current = document.activeElement;
     setCurrentImg(src);
     setIsOpen(true);
   };
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setIsOpen(false);
     setCurrentImg(null);
-  };
+  }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+      closeButtonRef.current?.focus();
+    } else {
+      document.body.style.overflow = "";
+      previousFocusRef.current?.focus?.();
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (!isOpen) return;
+      if (event.key === "Escape") {
+        closeModal();
+      }
+      if (event.key === "ArrowRight") {
+        goToNext();
+      }
+      if (event.key === "ArrowLeft") {
+        goToPrevious();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, goToNext, goToPrevious, closeModal]);
+
+  if (total === 0) {
+    return null;
+  }
 
   return (
     <div className="slideshow-container">
@@ -63,27 +97,45 @@ export default function Slideshow({ projectId }) {
         className="slideshow-track"
         style={{ transform: `translateX(-${index * 100}%)` }}
       >
-        {logement.pictures.map((src, i) => (
+        {pictures.map((src, i) => (
           <img
             key={i}
             src={src}
             alt={`${logement.title} ${i + 1}`}
             className="image-logement"
             onClick={() => openModal(src)}
+            loading="lazy"
+            decoding="async"
           />
         ))}
       </div>
-      <span>
+      <span className="slideshow-indicator">
         {index + 1} / {total}
       </span>
 
-      {/* Lightbox */}
       {isOpen && (
-        <div className="lightbox" onClick={closeModal}>
-          <span className="close-btn" onClick={closeModal}>
+        <div
+          className="lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Agrandissement de l'image"
+          onClick={closeModal}
+        >
+          <button
+            ref={closeButtonRef}
+            type="button"
+            className="close-btn"
+            onClick={closeModal}
+            aria-label="Fermer la fenêtre"
+          >
             <FontAwesomeIcon icon={faTimes} />
-          </span>
-          <img src={currentImg} alt="Agrandissement" className="lightbox-img" />
+          </button>
+          <img
+            src={currentImg}
+            alt="Agrandissement"
+            className="lightbox-img"
+            onClick={(event) => event.stopPropagation()}
+          />
         </div>
       )}
     </div>

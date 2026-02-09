@@ -1,9 +1,11 @@
-import "./Footer.scss";
+﻿import "./Footer.scss";
 
 export default function Footer() {
   return (
-    <footer>
-      <p>© 2026 Maxime ESTEVES, tous droits réservés.</p>
+    <footer className="site-footer">
+      <div className="container footer-inner">
+        <p>© 2026 Maxime ESTEVES, tous droits réservés.</p>
+      </div>
     </footer>
   );
 }

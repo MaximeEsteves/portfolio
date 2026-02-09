@@ -1,97 +1,104 @@
-// src/components/Projet/Projet.jsx
-import "./Projet.scss";
-import { useRef, useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+﻿import "./Projet.scss";
+import { useRef } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 import Annexe from "./Annexe";
-gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
-
-import Description from "./Description";
-import { Link } from "react-router-dom";
 import data from "../../../data.json";
-import Card from "./Card";
+import ProjectCard from "./ProjectCard";
+import SectionHeader from "./SectionHeader";
 
 export default function Projet({ showAll, setShowAll }) {
-  const firstExtraRef = useRef(null);
-  const lastVisibleRef = useRef(null);
-  // nouveau : ref pour le container et timeline
-  const containerRef = useRef(null);
+  const carouselRef = useRef(null);
+  const shouldReduceMotion = useReducedMotion();
 
-  const projetsToShow = showAll ? data : data.slice(0, 3);
+  const projectsToShow = data;
 
-  // ScrollIntoView pour “Voir plus / Voir moins”
-  useEffect(() => {
-    if (showAll && firstExtraRef.current) {
-      firstExtraRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-    if (!showAll && lastVisibleRef.current) {
-      lastVisibleRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  }, [showAll]);
+  const scrollCarousel = (direction) => {
+    if (!carouselRef.current) return;
+    const amount = carouselRef.current.clientWidth * 0.85;
+    carouselRef.current.scrollBy({ left: amount * direction, behavior: "smooth" });
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: shouldReduceMotion ? 0 : 0.08,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 16 },
+    show: { opacity: 1, y: 0 },
+  };
+  const MotionDiv = motion.div;
 
   return (
-    <div className="card-home" ref={containerRef} id="projet">
-      <h2>Mes réalisations</h2>
-      {projetsToShow.map((profil, index) => {
-        const isExtra = showAll && index === 3;
-        const isLastVisible = !showAll && index === 2;
-        return (
-          <div
-            className={`card-wrapper${isExtra ? " fade-in" : ""}`}
-            key={profil.id + index}
-            ref={
-              isExtra ? firstExtraRef : isLastVisible ? lastVisibleRef : null
-            }
-          >
-            {index % 2 === 0 ? (
-              <>
-                <div className="Description">
-                  <Description
-                    title={profil.title}
-                    description={profil.description}
-                    note={profil.note}
-                    specifications={profil.specifications}
-                  />
-                </div>
-                <Link target="_blank" to={profil.link}>
-                  <Card picture={profil.cover} title={profil.title} />
-                </Link>
-              </>
-            ) : (
-              <>
-                <Link target="_blank" to={profil.link}>
-                  <Card picture={profil.cover} title={profil.title} />
-                </Link>
-                <div className="Description">
-                  <Description
-                    title={profil.title}
-                    description={profil.description}
-                    note={profil.note}
-                    specifications={profil.specifications}
-                  />
-                </div>
-              </>
-            )}
-          </div>
-        );
-      })}
-      <Annexe visible={showAll} />
-      {data.length > 3 && (
-        <button
-          onClick={() => setShowAll((prev) => !prev)}
-          className="voir-plus-btn"
+    <section className="projects-section section" id="projet">
+      <div className="container">
+        <SectionHeader
+          title="Mes réalisations"
+          actions={
+            <div className="carousel-actions">
+              <button
+                type="button"
+                className="carousel-btn"
+                onClick={() => scrollCarousel(-1)}
+                aria-label="Faire défiler vers la gauche"
+              >
+                <FontAwesomeIcon icon={faArrowLeft} />
+              </button>
+              <button
+                type="button"
+                className="carousel-btn"
+                onClick={() => scrollCarousel(1)}
+                aria-label="Faire défiler vers la droite"
+              >
+                <FontAwesomeIcon icon={faArrowRight} />
+              </button>
+              {data.length > 0 ? (
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  onClick={() => setShowAll((prev) => !prev)}
+                >
+                  {showAll
+                    ? "Masquer les projets OpenClassrooms"
+                    : "Voir les projets OpenClassrooms"}
+                </button>
+              ) : null}
+            </div>
+          }
+        />
+
+        <MotionDiv
+          ref={carouselRef}
+          className="projects-carousel"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
         >
-          {showAll ? "Voir moins" : "Voir plus"}
-        </button>
-      )}
-    </div>
+          {projectsToShow.map((project) => (
+            <MotionDiv key={project.id} variants={itemVariants}>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-link"
+              >
+                <ProjectCard project={project} variant="featured" />
+              </a>
+            </MotionDiv>
+          ))}
+        </MotionDiv>
+
+        <Annexe visible={showAll} />
+      </div>
+    </section>
   );
 }

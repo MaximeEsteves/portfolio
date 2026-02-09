@@ -1,0 +1,33 @@
+﻿.scroll-back {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  z-index: 200;
+  transition: transform 0.2s var(--ease), border-color 0.2s var(--ease),
+    box-shadow 0.2s var(--ease);
+}
+
+.scroll-back:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 600px) {
+  .scroll-back {
+    right: 16px;
+    bottom: 16px;
+  }
+}
