@@ -13,7 +13,7 @@
       "picture": "/planiprof/image-planiprof.png"
     },
     "rating": "Visiter le site",
-    "link": "https://planiprof.netlify.app",
+    "link": "https://planiprof.fr",
     "location": "Application web",
     "equipments": [
       "React",
@@ -180,7 +180,7 @@
     "descriptionBis": "Star Search est une application web permettant de rechercher parmi les personnages et planètes de l'univers Star Wars via l'API SWAPI.",
     "specifications": "React, TailwindCSS, SWAPI, Lucide.",
     "cover": "/starsearch/image-starsearch.png",
-    "pictures": [],
+    "pictures": ["/starsearch/image-starsearch.png"],
     "host": {
       "name": "Site Star Search",
       "picture": "/starsearch/icone.svg"
