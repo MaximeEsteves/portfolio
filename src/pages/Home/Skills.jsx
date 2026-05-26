@@ -65,6 +65,13 @@ function Skills() {
           <div className="skills-item">
             <FontAwesomeIcon icon={faBriefcase} />
             <div>
+              <p>Leroy Merlin - Conseiller de vente 2026 - actuel</p>
+              <span>Conseil et vente à la cours des matériaux.</span>
+            </div>
+          </div>
+          <div className="skills-item">
+            <FontAwesomeIcon icon={faBriefcase} />
+            <div>
               <p>Asept InMed - Employé logistique 2023 - 2024</p>
               <span>
                 Réception et préparation de commandes de matériels médicaux.
