@@ -2,6 +2,38 @@
   padding-top: var(--space-6);
 }
 
+.project-detail-mobile > .container > .project-media {
+  aspect-ratio: auto;
+}
+
+.project-detail-mobile .slideshow-container {
+  height: min(760px, 80vh);
+  background: linear-gradient(135deg, #eaf3ff, #e7f9f1);
+}
+
+.project-detail-mobile .image-logement {
+  object-fit: contain;
+  padding: 16px 0 48px;
+  border-radius: 0;
+}
+
+.project-detail-mobile .collapse-content.open {
+  max-height: none;
+}
+
+.project-detail-mobile .collapse-content ul {
+  grid-template-columns: 1fr;
+}
+
+.project-scope-note {
+  margin-top: var(--space-5);
+  padding: var(--space-4);
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-surface-alt);
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+
 .project-header {
   display: flex;
   justify-content: space-between;

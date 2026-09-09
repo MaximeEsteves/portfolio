@@ -1,5 +1,62 @@
 [
   {
+    "id": "voldt",
+    "titleCard": "Voldt",
+    "title": "Voldt : suivi et pilotage de la recharge électrique",
+    "description": "Application Android personnelle dédiée au pilotage d’un boîtier de recharge connecté : programmation, suivi des consommations, estimation des coûts et alertes.",
+    "descriptionBis": "Voldt est une application Android que j’ai développée pour piloter mon boîtier de recharge connecté et mieux comprendre la consommation de mon véhicule électrique à domicile.\n\nL’objectif : réunir dans une même interface le contrôle de la recharge, sa programmation, le suivi énergétique et l’estimation des coûts selon les tarifs du fournisseur d’électricité.\n\nNé d’un besoin personnel, le projet évolue à partir de mon utilisation quotidienne et des problèmes rencontrés en conditions réelles.",
+    "specifications": "Kotlin, Jetpack Compose, Node.js, Supabase, Tuya Cloud.",
+    "cover": "/voldt/page_charge.jpg",
+    "mediaFormat": "mobile",
+    "previewPictures": [
+      "/voldt/page_planning.jpg",
+      "/voldt/page_charge.jpg",
+      "/voldt/page_conso.jpg"
+    ],
+    "pictures": [
+      "/voldt/page_charge.jpg",
+      "/voldt/page_planning.jpg",
+      "/voldt/page_conso.jpg",
+      "/voldt/charge_jour.jpg",
+      "/voldt/charge_detail.jpg",
+      "/voldt/page_tarifs.jpg",
+      "/voldt/page_config.jpg"
+    ],
+    "host": {
+      "name": "Voldt",
+      "picture": "/voldt/page_charge.jpg"
+    },
+    "rating": "Découvrir l’application",
+    "location": "Application Android",
+    "note": "Projet personnel",
+    "equipments": [
+      "Application Android : Kotlin, Jetpack Compose, Material 3.",
+      "Architecture mobile : MVVM, ViewModel, StateFlow, Coroutines, Hilt.",
+      "Communication réseau : Retrofit, OkHttp, Moshi, API REST et SSE.",
+      "Backend : Node.js, JavaScript, Express.",
+      "Authentification et données : Supabase Auth, PostgreSQL.",
+      "Connexion au boîtier : Tuya Cloud / SmartLife OpenAPI.",
+      "Notifications : Firebase Cloud Messaging.",
+      "Hébergement et outillage : Render, GitHub, Android Studio, Gradle.",
+      "Tests automatisés : JUnit et Node.js Test Runner."
+    ],
+    "tags": ["Mobile natif", "IoT", "Full-stack", "Recharge électrique"],
+    "features": [
+      "Pilotage de la recharge : démarrage, arrêt et réglage de l’intensité entre 8 et 16 A.",
+      "Tableau de bord connecté : état du boîtier, puissance, température et informations de recharge, avec actualisation manuelle.",
+      "Programmation personnalisée : définition des horaires, des jours, de la récurrence et de l’ampérage.",
+      "Suivi des consommations : historique des sessions, durées, énergie et coûts, avec répartition entre heures pleines et heures creuses.",
+      "Gestion des tarifs : configuration des plages horaires et modification des prix individuellement ou par catégorie.",
+      "Profil véhicule : sélection dans un catalogue multimarque, par modèle, année et finition, avec illustrations.",
+      "Relevés kilométriques : suivi graphique du kilométrage et saisie du niveau de batterie pour enrichir les indicateurs et les estimations.",
+      "Notifications personnalisables : événements de recharge, alertes de température et rappel mensuel de vérification des tarifs.",
+      "Mises à jour intégrées : téléchargement des nouvelles versions de l’application depuis son interface."
+    ],
+    "role": "J’ai pris en charge la conception de l’interface, le développement Android, la création du backend, la structuration des données et l’intégration du boîtier connecté. Le projet comprend également les tests, la génération des APK et la préparation des déploiements.",
+    "challenges": "Le principal défi consiste à maintenir une cohérence entre les informations du boîtier, le backend et l’application, même lorsque celle-ci est fermée. Cela implique de gérer les reconnexions, les données remontées tardivement, les limites des API et les risques de double comptabilisation.\n\nCe projet m’a permis d’approfondir le développement mobile natif, l’intégration IoT et la conception d’un système complet associant interface utilisateur, services cloud et données persistantes.",
+    "scopeNote": "La version stable présentée ici communique avec le boîtier via Tuya Cloud / SmartLife OpenAPI. L’appairage Bluetooth/Wi-Fi appartient au prototype V2 et ne fait pas partie des fonctionnalités validées de cette version."
+  },
+  {
     "id": "c67abyu9",
     "titleCard": "Planiprof",
     "title": "Planiprof",

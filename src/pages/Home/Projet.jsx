@@ -1,5 +1,6 @@
 ﻿import "./Projet.scss";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { motion, useReducedMotion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -16,9 +17,16 @@ export default function Projet({ showAll, setShowAll }) {
   const projectsToShow = data;
 
   const scrollCarousel = (direction) => {
-    if (!carouselRef.current) return;
-    const amount = carouselRef.current.clientWidth * 0.85;
-    carouselRef.current.scrollBy({ left: amount * direction, behavior: "smooth" });
+    const carousel = carouselRef.current;
+    if (!carousel?.firstElementChild) return;
+    const cardWidth = carousel.firstElementChild.getBoundingClientRect().width;
+    const gap = parseFloat(getComputedStyle(carousel).columnGap) || 0;
+    const step = cardWidth + gap;
+    const currentCard = Math.round(carousel.scrollLeft / step);
+    carousel.scrollTo({
+      left: (currentCard + direction) * step,
+      behavior: shouldReduceMotion ? "auto" : "smooth",
+    });
   };
 
   const containerVariants = {
@@ -49,6 +57,7 @@ export default function Projet({ showAll, setShowAll }) {
                 className="carousel-btn"
                 onClick={() => scrollCarousel(-1)}
                 aria-label="Faire défiler vers la gauche"
+                aria-controls="realisations-carousel"
               >
                 <FontAwesomeIcon icon={faArrowLeft} />
               </button>
@@ -57,25 +66,16 @@ export default function Projet({ showAll, setShowAll }) {
                 className="carousel-btn"
                 onClick={() => scrollCarousel(1)}
                 aria-label="Faire défiler vers la droite"
+                aria-controls="realisations-carousel"
               >
                 <FontAwesomeIcon icon={faArrowRight} />
               </button>
-              {data.length > 0 ? (
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                  onClick={() => setShowAll((prev) => !prev)}
-                >
-                  {showAll
-                    ? "Masquer les projets OpenClassrooms"
-                    : "Voir les projets OpenClassrooms"}
-                </button>
-              ) : null}
             </div>
           }
         />
 
         <MotionDiv
+          id="realisations-carousel"
           ref={carouselRef}
           className="projects-carousel"
           variants={containerVariants}
@@ -85,19 +85,41 @@ export default function Projet({ showAll, setShowAll }) {
         >
           {projectsToShow.map((project) => (
             <MotionDiv key={project.id} variants={itemVariants}>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project-link"
-              >
-                <ProjectCard project={project} variant="featured" />
-              </a>
+              {project.link ? (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link"
+                >
+                  <ProjectCard project={project} variant="featured" />
+                </a>
+              ) : (
+                <Link to={`/projet/${project.id}`} className="project-link">
+                  <ProjectCard project={project} variant="featured" />
+                </Link>
+              )}
             </MotionDiv>
           ))}
         </MotionDiv>
 
-        <Annexe visible={showAll} />
+        <div className="projects-toggle">
+          <button
+            type="button"
+            className="btn btn-secondary"
+            onClick={() => setShowAll((prev) => !prev)}
+            aria-expanded={showAll}
+            aria-controls="openclassrooms-projects"
+          >
+            {showAll
+              ? "Masquer les projets OpenClassrooms"
+              : "Voir les projets OpenClassrooms"}
+          </button>
+        </div>
+
+        <div id="openclassrooms-projects" hidden={!showAll}>
+          <Annexe visible={showAll} />
+        </div>
       </div>
     </section>
   );

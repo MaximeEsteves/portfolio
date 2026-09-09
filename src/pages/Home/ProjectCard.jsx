@@ -10,14 +10,19 @@ function ProjectCard({ project, variant = "featured" }) {
   const isCompact = variant === "compact";
 
   return (
-    <article className={`project-card ${variant}`}>
+    <article
+      className={`project-card ${variant}${project.mediaFormat === "mobile" ? " project-card-mobile" : ""}`}
+    >
       <div className="project-media">
-        <img
-          src={project.cover}
-          alt={`Aperçu du projet ${project.title}`}
-          loading="lazy"
-          decoding="async"
-        />
+        {(project.previewPictures || [project.cover]).map((src, index) => (
+          <img
+            key={src}
+            src={src}
+            alt={`Aperçu du projet ${project.title}${project.previewPictures ? ` — écran ${index + 1}` : ""}`}
+            loading="lazy"
+            decoding="async"
+          />
+        ))}
       </div>
       <div className="project-body">
         <div className="project-meta">
@@ -50,7 +55,7 @@ function ProjectCard({ project, variant = "featured" }) {
           <span className="project-cta">
             {project.rating}
             <span className="project-cta-icon" aria-hidden="true">
-              ↗
+              {project.link ? "↗" : "→"}
             </span>
           </span>
         )}

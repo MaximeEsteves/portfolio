@@ -20,21 +20,29 @@ export default function Logement() {
   const nextProject = allProjects[(currentIndex + 1) % allProjects.length];
 
   return (
-    <section className="project-detail section">
+    <section
+      className={`project-detail section${logement.mediaFormat === "mobile" ? " project-detail-mobile" : ""}`}
+    >
       <div className="container">
         <div className="project-header">
           <div>
             <h1 className="project-title">{logement.title}</h1>
             <p className="project-location">{logement.location}</p>
           </div>
-          <a
-            href={logement.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary"
-          >
-            {logement.rating}
-          </a>
+          {logement.link ? (
+            <a
+              href={logement.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+            >
+              {logement.rating}
+            </a>
+          ) : (
+            <Link to="/" className="btn btn-secondary">
+              Retour aux réalisations
+            </Link>
+          )}
         </div>
 
         <div className="project-media">
@@ -62,7 +70,32 @@ export default function Logement() {
               description={logement.equipments}
             />
           </div>
+          {logement.features && (
+            <div>
+              <Collapse
+                titre="Fonctionnalités principales"
+                description={logement.features}
+              />
+            </div>
+          )}
+          {logement.role && (
+            <div>
+              <Collapse titre="Mon rôle" description={logement.role} />
+            </div>
+          )}
+          {logement.challenges && (
+            <div>
+              <Collapse
+                titre="Enjeux techniques"
+                description={logement.challenges}
+              />
+            </div>
+          )}
         </div>
+
+        {logement.scopeNote && (
+          <p className="project-scope-note">{logement.scopeNote}</p>
+        )}
 
         <div className="project-next">
           <p className="project-next-label">Projet suivant</p>

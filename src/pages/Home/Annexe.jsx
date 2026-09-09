@@ -15,9 +15,16 @@ export default function Annexe({ visible }) {
   if (!visible) return null;
 
   const scrollCarousel = (direction) => {
-    if (!carouselRef.current) return;
-    const amount = carouselRef.current.clientWidth * 0.85;
-    carouselRef.current.scrollBy({ left: amount * direction, behavior: "smooth" });
+    const carousel = carouselRef.current;
+    if (!carousel?.firstElementChild) return;
+    const cardWidth = carousel.firstElementChild.getBoundingClientRect().width;
+    const gap = parseFloat(getComputedStyle(carousel).columnGap) || 0;
+    const step = cardWidth + gap;
+    const currentCard = Math.round(carousel.scrollLeft / step);
+    carousel.scrollTo({
+      left: (currentCard + direction) * step,
+      behavior: shouldReduceMotion ? "auto" : "smooth",
+    });
   };
 
   const containerVariants = {
@@ -48,6 +55,7 @@ export default function Annexe({ visible }) {
               className="carousel-btn"
               onClick={() => scrollCarousel(-1)}
               aria-label="Faire défiler vers la gauche"
+              aria-controls="openclassrooms-carousel"
             >
               <FontAwesomeIcon icon={faArrowLeft} />
             </button>
@@ -56,6 +64,7 @@ export default function Annexe({ visible }) {
               className="carousel-btn"
               onClick={() => scrollCarousel(1)}
               aria-label="Faire défiler vers la droite"
+              aria-controls="openclassrooms-carousel"
             >
               <FontAwesomeIcon icon={faArrowRight} />
             </button>
@@ -63,6 +72,7 @@ export default function Annexe({ visible }) {
         }
       />
       <MotionDiv
+        id="openclassrooms-carousel"
         ref={carouselRef}
         className="projects-carousel annexe-carousel"
         variants={containerVariants}

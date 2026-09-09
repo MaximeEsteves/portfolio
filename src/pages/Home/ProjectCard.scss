@@ -37,6 +37,24 @@
   transform: scale(1.05);
 }
 
+.project-card-mobile .project-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3%;
+  padding: 5%;
+  background: linear-gradient(135deg, #eaf3ff, #e7f9f1);
+}
+
+.project-card-mobile .project-media img {
+  width: 29%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
 .project-body {
   display: flex;
   flex-direction: column;
