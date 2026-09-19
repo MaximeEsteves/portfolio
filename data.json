@@ -1,10 +1,10 @@
 [
   {
     "id": "voldt",
-    "titleCard": "Voldt",
-    "title": "Voldt : suivi et pilotage de la recharge électrique",
+    "titleCard": "VoldtEV",
+    "title": "VoldtEV : suivi et pilotage de la recharge électrique",
     "description": "Application Android personnelle dédiée au pilotage d’un boîtier de recharge connecté : programmation, suivi des consommations, estimation des coûts et alertes.",
-    "descriptionBis": "Voldt est une application Android que j’ai développée pour piloter mon boîtier de recharge connecté et mieux comprendre la consommation de mon véhicule électrique à domicile.\n\nL’objectif : réunir dans une même interface le contrôle de la recharge, sa programmation, le suivi énergétique et l’estimation des coûts selon les tarifs du fournisseur d’électricité.\n\nNé d’un besoin personnel, le projet évolue à partir de mon utilisation quotidienne et des problèmes rencontrés en conditions réelles.",
+    "descriptionBis": "VoldtEV est une application Android que j’ai développée pour piloter mon boîtier de recharge connecté et mieux comprendre la consommation de mon véhicule électrique à domicile.\n\nL’objectif : réunir dans une même interface le contrôle de la recharge, sa programmation, le suivi énergétique et l’estimation des coûts selon les tarifs du fournisseur d’électricité.\n\nNé d’un besoin personnel, le projet évolue à partir de mon utilisation quotidienne et des problèmes rencontrés en conditions réelles.",
     "specifications": "Kotlin, Jetpack Compose, Node.js, Supabase, Tuya Cloud.",
     "cover": "/voldt/page_charge.jpg",
     "mediaFormat": "mobile",
@@ -23,12 +23,12 @@
       "/voldt/page_config.jpg"
     ],
     "host": {
-      "name": "Voldt",
+      "name": "VoldtEV",
       "picture": "/voldt/page_charge.jpg"
     },
-    "rating": "Découvrir l’application",
+    "rating": "Télécharger l’APK",
+    "link": "public/voldt/VoldtEV-V2-2.0.0-poc.11.apk",
     "location": "Application Android",
-    "note": "Projet personnel",
     "equipments": [
       "Application Android : Kotlin, Jetpack Compose, Material 3.",
       "Architecture mobile : MVVM, ViewModel, StateFlow, Coroutines, Hilt.",
