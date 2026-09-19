@@ -27,7 +27,7 @@
       "picture": "/voldt/page_charge.jpg"
     },
     "rating": "Télécharger l’APK",
-    "link": "public/voldt/VoldtEV-V2-2.0.0-poc.11.apk",
+    "link": "voldt/VoldtEV-V2-2.0.0-poc.11.apk",
     "location": "Application Android",
     "equipments": [
       "Application Android : Kotlin, Jetpack Compose, Material 3.",
