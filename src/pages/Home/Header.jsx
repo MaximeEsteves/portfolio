@@ -17,10 +17,10 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [theme, setTheme] = useState(() => {
-    if (typeof window === "undefined") return "dark";
+    if (typeof window === "undefined") return "";
     const stored = window.localStorage.getItem("theme");
     if (stored) return stored;
-    return "dark";
+    return "";
   });
 
   useEffect(() => {

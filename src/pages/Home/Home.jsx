@@ -39,11 +39,15 @@ export default function Home() {
           <div className="hero-content">
             <h1 className="hero-title">Développeur front-end</h1>
             <p className="hero-description">
-              👋 Bonjour, je suis <strong>Maxime Esteves</strong>, développeur web
-              diplômé, je mets mes compétences en front-end au service de projets
-              digitaux ambitieux. Rigoureux et motivé, je souhaite intégrer une
-              entreprise afin de contribuer activement à son développement
-              digital. ☺️
+              👋 Bonjour, je suis <strong>Maxime Esteves</strong>, développeur
+              web spécialisé en front-end. Je conçois des interfaces web
+              modernes, responsives et performantes avec notamment React,
+              JavaScript, HTML et CSS. Je peux intervenir sur la création d’un
+              site, le développement d’une interface, l’amélioration d’un projet
+              existant ou l’ajout de nouvelles fonctionnalités. Rigoureux et
+              impliqué, j’accorde une attention particulière à la qualité du
+              code, à l’expérience utilisateur et au respect du besoin client.
+              ☺️
             </p>
             <div className="hero-actions">
               <a className="btn btn-primary" href="#contact">
