@@ -38,7 +38,7 @@ function Reseaux({ variant = "pill" }) {
         <FontAwesomeIcon icon={faEnvelope} aria-hidden="true" />
         <span className="sr-only">Email</span>
       </a>
-      <a
+      {/* <a
         href="https://www.tiktok.com/@maximo_delavego"
         target="_blank"
         rel="noopener noreferrer"
@@ -47,7 +47,7 @@ function Reseaux({ variant = "pill" }) {
       >
         <FontAwesomeIcon icon={faTiktok} aria-hidden="true" />
         <span className="sr-only">TikTok</span>
-      </a>
+      </a> */}
       <a
         href="https://github.com/MaximeEsteves?tab=repositories"
         target="_blank"
