@@ -1,10 +1,11 @@
 ﻿import "./Reseaux.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFileInvoice, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
-  faFileInvoice,
-  faEnvelope,
-} from "@fortawesome/free-solid-svg-icons";
-import { faTiktok, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+  faTiktok,
+  faLinkedin,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
 
 function Reseaux({ variant = "pill" }) {
   return (
@@ -30,7 +31,7 @@ function Reseaux({ variant = "pill" }) {
         <span className="sr-only">LinkedIn</span>
       </a>
       <a
-        href="mailto:maxime.esteves81@orange.fr"
+        href="mailto:contact@maximeesteves.fr"
         aria-label="Envoyer un email à Maxime Esteves"
         title="Email"
       >
