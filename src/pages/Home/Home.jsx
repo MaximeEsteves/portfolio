@@ -37,7 +37,7 @@ export default function Home() {
       <section className="hero section">
         <div className="container hero-grid">
           <div className="hero-content">
-            <h1 className="hero-title">Développeur front-end</h1>
+            <h1 className="hero-title">Développeur web</h1>
             <p className="hero-description">
               👋 Bonjour, je suis <strong>Maxime Esteves</strong>, développeur
               web spécialisé en front-end. Je conçois des interfaces web
@@ -52,14 +52,6 @@ export default function Home() {
             <div className="hero-actions">
               <a className="btn btn-primary" href="#contact">
                 Contact
-              </a>
-              <a
-                className="btn btn-secondary"
-                href="/CV_Maxime_ESTEVES.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Télécharger le CV
               </a>
             </div>
           </div>

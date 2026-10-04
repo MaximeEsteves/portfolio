@@ -5,7 +5,9 @@
   background: var(--header-bg);
   border-bottom: 1px solid var(--color-line);
   backdrop-filter: blur(14px);
-  transition: transform 0.3s var(--ease), background 0.3s var(--ease);
+  transition:
+    transform 0.3s var(--ease),
+    background 0.3s var(--ease);
 }
 
 .site-header.is-hidden {
@@ -85,12 +87,13 @@
   color: #ffffff;
   font-size: 13px;
   font-weight: 600;
-  transition: transform 0.2s var(--ease), background 0.2s var(--ease);
+  transition:
+    transform 0.2s var(--ease),
+    background 0.2s var(--ease);
 }
 
 .nav-cta:hover {
   color: #ffffff;
-  background: var(--color-accent-strong);
   transform: translateY(-1px);
 }
 
@@ -118,7 +121,9 @@
   background: var(--color-surface);
   color: var(--color-ink);
   cursor: pointer;
-  transition: transform 0.2s var(--ease), border-color 0.2s var(--ease);
+  transition:
+    transform 0.2s var(--ease),
+    border-color 0.2s var(--ease);
 }
 
 .theme-toggle:hover {
@@ -147,7 +152,9 @@
     opacity: 0;
     pointer-events: none;
     transform: translateY(-12px);
-    transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
+    transition:
+      opacity 0.2s var(--ease),
+      transform 0.2s var(--ease);
   }
 
   .nav-links.open {
