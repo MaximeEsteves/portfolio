@@ -1,6 +1,6 @@
 ﻿import "./Home.scss";
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion, useReducedMotion } from "framer-motion";
 import SectionHeader from "./SectionHeader";
 import Skills from "./Skills";
@@ -67,6 +67,17 @@ export default function Home() {
       </section>
 
       <Projet showAll={showAll} setShowAll={setShowAll} />
+
+      <section className="section" aria-labelledby="restaurant-teaser-title">
+        <div className="container">
+          <SectionHeader
+            eyebrow="Sites web pour restaurants"
+            title={<span id="restaurant-teaser-title">Votre restaurant, sa vitrine en ligne.</span>}
+            description="Découvrez trois sites d’exemple pour imaginer la présence en ligne de votre établissement."
+            actions={<Link className="btn btn-secondary" to="/restaurant">Découvrir les sites de restaurants →</Link>}
+          />
+        </div>
+      </section>
 
       <MotionSection
         className="section"

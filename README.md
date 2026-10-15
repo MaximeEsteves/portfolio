@@ -18,6 +18,17 @@ Ce portfolio est conçu comme une vitrine professionnelle, avec une mise en vale
 - **Animations et effets visuels** pour dynamiser la présentation
 - **Contact** : formulaire ou lien direct vers mes réseaux
 
+## Rubrique restaurants
+
+La page `/restaurant` présente trois sites d’exemple destinés à la prospection.
+Elle est accessible depuis le menu et l’accueil. Les textes et liens sont dans
+`src/pages/Restaurant/Restaurant.jsx`, les aperçus locaux dans `public/restaurants/`.
+Le bouton de contact ouvre un e-mail prérempli, sans envoyer de message automatiquement.
+
+Après déploiement du portfolio sur Vercel, l’adresse à partager est
+`https://maximeesteves.fr/restaurant`. Les réécritures dans `vercel.json`
+permettent l’ouverture directe et le rafraîchissement de cette route.
+
 ## 🛠️ Stack technique
 
 - **Front-end** : HTML5, CSS3 (SCSS), JavaScript

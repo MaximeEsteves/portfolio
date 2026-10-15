@@ -89,6 +89,9 @@ function Header() {
           <button type="button" onClick={() => goToSection("projet")}>
             Projet
           </button>
+          <Link to="/restaurant" onClick={() => setIsOpen(false)} aria-current={location.pathname === "/restaurant" ? "page" : undefined}>
+            Restaurants
+          </Link>
           <button type="button" onClick={() => goToSection("contact")}>
             Contact
           </button>

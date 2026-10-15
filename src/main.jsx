@@ -10,6 +10,7 @@ import Footer from "./pages/Home/Footer";
 import Home from "./pages/Home/Home";
 import Logement from "./pages/Logement/Logement";
 import Error from "./pages/Error/Error";
+import Restaurant from "./pages/Restaurant/Restaurant";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -18,6 +19,7 @@ createRoot(document.getElementById("root")).render(
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/restaurant" element={<Restaurant />} />
         <Route path="/projet/:id" element={<Logement />} />
         <Route path="*" element={<Error />} />
       </Routes>

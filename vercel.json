@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/restaurant", "destination": "/index.html" },
+    { "source": "/restaurant/", "destination": "/index.html" },
+    { "source": "/projet/:id", "destination": "/index.html" }
+  ]
+}

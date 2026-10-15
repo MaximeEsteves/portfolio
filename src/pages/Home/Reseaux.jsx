@@ -2,7 +2,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileInvoice, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
-  faTiktok,
   faLinkedin,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
