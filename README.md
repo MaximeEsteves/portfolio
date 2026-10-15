@@ -20,14 +20,19 @@ Ce portfolio est conçu comme une vitrine professionnelle, avec une mise en vale
 
 ## Rubrique restaurants
 
-La page `/restaurant` présente trois sites d’exemple destinés à la prospection.
+La page `/restaurant` présente des sites d’exemple destinés à la prospection.
 Elle est accessible depuis le menu et l’accueil. Les textes et liens sont dans
-`src/pages/Restaurant/Restaurant.jsx`, les aperçus locaux dans `public/restaurants/`.
+`src/data/restaurantExamples.js`, partagés avec les aperçus de l’accueil.
+Les images sont dans `public/restaurants/`.
 Le bouton de contact ouvre un e-mail prérempli, sans envoyer de message automatiquement.
 
-Après déploiement du portfolio sur Vercel, l’adresse à partager est
-`https://maximeesteves.fr/restaurant`. Les réécritures dans `vercel.json`
-permettent l’ouverture directe et le rafraîchissement de cette route.
+Après déploiement du portfolio sur Netlify, l’adresse à partager est
+`https://maximeesteves.fr/restaurant`. La règle dans `public/_redirects`, copiée
+dans `dist/_redirects` à la compilation, permet l’ouverture directe et le
+rafraîchissement des routes React (`/restaurant`, `/projet/:id`, etc.) sans
+modifier l’URL. Les fichiers existants (images, PDF, scripts) restent servis normalement.
+`netlify.toml` définit la compilation et le dossier `dist` à publier.
+La configuration Vercel est conservée pour un éventuel autre hébergement.
 
 ## 🛠️ Stack technique
 
@@ -35,7 +40,7 @@ permettent l’ouverture directe et le rafraîchissement de cette route.
 - **Framework** : React.js
 - **Animations** : Framer Motion
 - **Gestion d’icônes** : Font Awesome
-- **Hébergement** : Vercel
+- **Hébergement** : Netlify
 
 ## 📂 Installation et exécution
 

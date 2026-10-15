@@ -6,6 +6,7 @@ import SectionHeader from "./SectionHeader";
 import Skills from "./Skills";
 import Projet from "./Projet";
 import Contact from "./Contact";
+import { restaurantExamples } from "../../data/restaurantExamples";
 import Photo from "/public/photo-profil.png";
 
 const skillsDescription =
@@ -68,14 +69,52 @@ export default function Home() {
 
       <Projet showAll={showAll} setShowAll={setShowAll} />
 
-      <section className="section" aria-labelledby="restaurant-teaser-title">
+      <section
+        className="section restaurant-teaser"
+        id="restaurants"
+        aria-labelledby="restaurant-teaser-title"
+      >
         <div className="container">
           <SectionHeader
             eyebrow="Sites web pour restaurants"
-            title={<span id="restaurant-teaser-title">Votre restaurant, sa vitrine en ligne.</span>}
-            description="Découvrez trois sites d’exemple pour imaginer la présence en ligne de votre établissement."
-            actions={<Link className="btn btn-secondary" to="/restaurant">Découvrir les sites de restaurants →</Link>}
+            title={
+              <span id="restaurant-teaser-title">
+                Votre restaurant, sa vitrine en ligne.
+              </span>
+            }
+            description="Découvrez des sites d’exemple pour imaginer la présence en ligne de votre établissement."
+            actions={
+              <Link className="btn btn-secondary" to="/restaurant">
+                Découvrir les sites de restaurants →
+              </Link>
+            }
           />
+          <div className="restaurant-teaser-grid">
+            {restaurantExamples.map((example) => (
+              <Link
+                to="/restaurant"
+                key={example.url}
+                className="restaurant-teaser-card"
+                aria-label={`${example.name} : découvrir la rubrique restaurants`}
+              >
+                <img
+                  src={example.image}
+                  alt={`Aperçu du site d’exemple ${example.name}`}
+                  width="1265"
+                  height="712"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="restaurant-teaser-caption">
+                  <span className="pill">Site d’exemple</span>
+                  <h3>{example.name}</h3>
+                  <span className="restaurant-teaser-cta">
+                    Découvrir la rubrique <span aria-hidden="true">→</span>
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
